@@ -15,11 +15,14 @@
  * limitations under the License.
  *
  */
-(function(window, undefined) {
+(function (window, undefined) {
+    window.Asc.plugin.init = function () {
+        alert(
+            `Forms in this document ${window.Asc.plugin.executeMethod(
+                'GetAllForms'
+            )}`
+        );
+    };
 
-	window.Asc.plugin.init = function() {
-		
-	};
-	
-
+    window.Asc.plugin.executeMethod('GetFormValue', {});
 })(window, undefined);
