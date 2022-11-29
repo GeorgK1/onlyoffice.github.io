@@ -17,9 +17,8 @@
  */
 (function (window, undefined) {
     window.Asc.plugin.init = function () {
-        window.Asc.plugin.executeMethod('GetAllForms', (form) => {
-            alert('Forms in this document are', form);
-        });
+        const allForms = window.Asc.plugin.executeMethod('GetAllForms')
+		alert(allForms)
     };
 
     window.Asc.plugin.executeMethod('GetFormValue', {});
