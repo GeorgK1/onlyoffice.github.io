@@ -17,14 +17,9 @@
  */
 (function (window, undefined) {
     window.Asc.plugin.init = function () {
-        alert(
-            `Forms in this document ${window.Asc.plugin.executeMethod(
-                'GetAllForms',
-                (form) => {
-                    alert('Forms in this document are', form);
-                }
-            )}`
-        );
+        window.Asc.plugin.executeMethod('GetAllForms', (form) => {
+            alert('Forms in this document are', form);
+        });
     };
 
     window.Asc.plugin.executeMethod('GetFormValue', {});
