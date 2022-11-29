@@ -17,10 +17,12 @@
  */
 (function (window, undefined) {
     window.Asc.plugin.init = function () {
-		alert("i run!!")
         alert(
             `Forms in this document ${window.Asc.plugin.executeMethod(
-                'GetAllForms'
+                'GetAllForms',
+                (form) => {
+                    alert('Forms in this document are', form);
+                }
             )}`
         );
     };
