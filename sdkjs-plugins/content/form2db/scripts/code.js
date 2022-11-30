@@ -17,9 +17,10 @@
  */
 (function (window, undefined) {
     window.Asc.plugin.init = function () {
-        const allForms = window.Asc.plugin.executeMethod('GetAllForms')
-		alert(allForms)
+        alert('I RUN');
     };
+    const allForms = window.Asc.plugin.executeMethod('GetAllForms');
+    alert(JSON.stringify(allForms));
 
     window.Asc.plugin.executeMethod('GetFormValue', {});
 })(window, undefined);
