@@ -8,18 +8,13 @@
             if (data) {
                 for (const id of data) {
                     ids.push(id);
+                    window.Asc.plugin.executeMethod(
+                        'GetFormValue',
+                        id,
+                        (data) => console.log('I run here', data)
+                    );
                 }
             }
         };
-
-        for (const id of ids) {
-            console.log(id);
-
-            window.Asc.plugin.executeMethod('GetFormValue', id);
-
-            window.Asc.plugin.onMethodReturn = (data) => {
-                console.log('Hopefully this contains form values', data);
-            };
-        }
     };
 })(window, undefined);
