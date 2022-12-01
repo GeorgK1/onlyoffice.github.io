@@ -5,10 +5,11 @@
         // const allForms = oDocument.getAllForms();
         // console.log(allForms);
 
-       window.Asc.plugin.executeMethod(
-            'GetAllForms',
-            (data) => console.log(data)
-        );
+        window.Asc.plugin.executeMethod('GetAllForms');
+
+        window.Asc.plugin.onMethodReturn = (data) => {
+            console.log(data);
+        };
         // console.log(allForms);
         // window.Asc.plugin.onMethodReturn = () => {
         //     console.log("Running from onmethodreturn", window.Asc.plugin.info)
