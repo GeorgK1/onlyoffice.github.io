@@ -1,14 +1,9 @@
 ((window, undefined) => {
     window.Asc.plugin.init = () => {
-        console.log('I run');
-        // const oDocument = Api.GetDocument();
-        // const allForms = oDocument.getAllForms();
-        // console.log(allForms);
-
         window.Asc.plugin.executeMethod('GetAllForms');
 
         window.Asc.plugin.onMethodReturn = (data) => {
-            console.log(data)
+            console.log(data, "I run")
             if (data) {
                 for (const id of data) {
                     console.log(id);
@@ -17,8 +12,8 @@
             }
         };
 
-        window.Asc.plugin.onMethodReturn = (data) => {
-            console.log('Hopefully this contains form values', data);
-        };
+        // window.Asc.plugin.onMethodReturn = (data) => {
+        //     console.log('Hopefully this contains form values', data);
+        // };
     };
 })(window, undefined);
