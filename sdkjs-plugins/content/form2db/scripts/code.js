@@ -8,6 +8,7 @@
         window.Asc.plugin.executeMethod('GetAllForms');
 
         window.Asc.plugin.onMethodReturn = (data) => {
+            console.log(data)
             if (data) {
                 for (const id of data) {
                     console.log(id);
@@ -17,7 +18,7 @@
         };
 
         window.Asc.plugin.onMethodReturn = (data) => {
-            console.log('Hopefully this contains form values');
+            console.log('Hopefully this contains form values', data);
         };
     };
 })(window, undefined);
