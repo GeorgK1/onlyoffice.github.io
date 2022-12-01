@@ -4,13 +4,13 @@
         // const oDocument = Api.GetDocument();
         // const allForms = oDocument.getAllForms();
         // console.log(allForms);
-
+        
         window.Asc.plugin.executeMethod('GetAllForms');
 
-        window.Asc.plugin.onMethodReturn = (data) => {
-            console.log(data);
+        const allForms = window.Asc.plugin.onMethodReturn = (data) => {
+            return data
         };
-        // console.log(allForms);
+        console.log(allForms);
         // window.Asc.plugin.onMethodReturn = () => {
         //     console.log("Running from onmethodreturn", window.Asc.plugin.info)
         // }
