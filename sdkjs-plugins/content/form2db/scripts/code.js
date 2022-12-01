@@ -10,7 +10,7 @@
                 for (const id of data) {
                     ids.push(id.InternalId);
                     console.log(id.InternalId)
-                    window.Asc.plugin.executeMethod('GetFormValue', id.InternalId, (value) => console.log("value is ", value));
+                    window.Asc.plugin.executeMethod('GetFormValue', [id.InternalId], (value) => console.log("value is ", value));
                 }
             }
         };
