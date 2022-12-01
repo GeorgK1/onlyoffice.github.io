@@ -8,9 +8,9 @@
             console.log(data);
             if (data) {
                 for (const id of data) {
-                    ids.push(id);
-                    console.log(id)
-                    window.Asc.plugin.executeMethod('GetFormValue', id, (value) => console.log("value is ", value));
+                    ids.push(id.InternalId);
+                    console.log(id.InternalId)
+                    window.Asc.plugin.executeMethod('GetFormValue', id.InternalId, (value) => console.log("value is ", value));
                 }
             }
         };
