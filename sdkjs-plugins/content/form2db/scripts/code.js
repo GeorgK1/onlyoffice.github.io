@@ -1,11 +1,9 @@
 ((window, undefined) => {
     window.Asc.plugin.init = () => {
-        const ids = [];
 
         window.Asc.plugin.executeMethod('GetAllForms');
 
         window.Asc.plugin.onMethodReturn = (data) => {
-            console.log(data);
             if (data) {
                 for (const id of data) {
                     ids.push(id.InternalId);
@@ -14,13 +12,13 @@
                         'GetFormValue',
                         [id.InternalId],
                         (value) => {
-                            console.log('value is ', value);
-
                             if (value) {
-                                const result = fetch(
-                                    'https://eosuz6runlql9t9.m.pipedream.net',
+                                console.log('value is ', value);
+
+                                fetch(
+                                    'https://eobq6mnbjz8zqdt.m.pipedream.net',
                                     {
-                                        method: 'POST',
+                                        method: 'PUT',
                                         body: JSON.stringify(value),
                                     }
                                 ).then((res) => console.log(res.status));
