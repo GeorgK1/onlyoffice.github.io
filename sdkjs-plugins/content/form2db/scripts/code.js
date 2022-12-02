@@ -6,8 +6,6 @@
         window.Asc.plugin.onMethodReturn = (data) => {
             if (data) {
                 for (const id of data) {
-                    ids.push(id.InternalId);
-                    console.log(id.InternalId);
                     window.Asc.plugin.executeMethod(
                         'GetFormValue',
                         [id.InternalId],
