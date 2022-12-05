@@ -6,7 +6,7 @@
             if (data) {
                 for (const id of data) {
                     const internalId = id.InternalId;
-                    console.log(id, "Id is")
+                    const tag = id.Tag
                     window.Asc.plugin.executeMethod(
                         'GetFormValue',
                         [internalId],
@@ -16,11 +16,12 @@
                                     'value is ',
                                     value,
                                     'internal id: ',
-                                    internalId
+                                    internalId,
+                                    'tag', tag
                                 );
 
                                 const payload = {
-                                    internalId: value,
+                                    tag: value,
                                 };
 
                                 fetch(
