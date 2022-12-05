@@ -21,7 +21,7 @@
                                     'https://eobq6mnbjz8zqdt.m.pipedream.net',
                                     {
                                         method: 'PUT',
-                                        body: payload,
+                                        body: JSON.stringify(payload),
                                     }
                                 ).then((res) => console.log(res.status));
                             }
