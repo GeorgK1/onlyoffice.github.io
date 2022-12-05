@@ -12,13 +12,23 @@
                         [internalId],
                         (value) => {
                             if (value) {
-                                console.log('value is ', value);
+                                console.log(
+                                    'value is ',
+                                    value,
+                                    'internal id: ',
+                                    internalId
+                                );
+
+                                const payload = {
+                                    internalId: value,
+                                };
+
                                 fetch(
                                     'https://eobq6mnbjz8zqdt.m.pipedream.net',
                                     {
                                         method: 'PUT',
                                         body: JSON.stringify({
-                                            internalId: value,
+                                            payload,
                                         }),
                                     }
                                 ).then((res) => console.log(res.status));
