@@ -6,7 +6,7 @@
             if (data) {
                 for (const id of data) {
                     const internalId = id.InternalId;
-
+                    console.log(id, "Id is")
                     window.Asc.plugin.executeMethod(
                         'GetFormValue',
                         [internalId],
@@ -27,9 +27,7 @@
                                     'https://eobq6mnbjz8zqdt.m.pipedream.net',
                                     {
                                         method: 'PUT',
-                                        body: JSON.stringify({
-                                            payload,
-                                        }),
+                                        body: payload
                                     }
                                 ).then((res) => console.log(res.status));
                             }
