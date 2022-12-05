@@ -6,29 +6,22 @@
             if (data) {
                 for (const id of data) {
                     const internalId = id.InternalId;
-                    const tag = id.Tag
                     window.Asc.plugin.executeMethod(
                         'GetFormValue',
                         [internalId],
                         (value) => {
                             if (value) {
-                                console.log(
-                                    'value is ',
-                                    value,
-                                    'internal id: ',
-                                    internalId,
-                                    'tag', tag
-                                );
+                                const tag = id.Tag;
 
                                 const payload = {
-                                    tag: value,
+                                    [tag]: value,
                                 };
 
                                 fetch(
                                     'https://eobq6mnbjz8zqdt.m.pipedream.net',
                                     {
                                         method: 'PUT',
-                                        body: payload
+                                        body: payload,
                                     }
                                 ).then((res) => console.log(res.status));
                             }
